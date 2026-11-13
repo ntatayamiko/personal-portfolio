@@ -1,12 +1,12 @@
-/* Theme palette */
+/* Gold palette with translucent white panels and white typography. */
 :root {
   --gold: #d4af37;
   --gold-light: #fff1a8;
   --gold-deep: #9c7410;
-  --glass: rgba(255, 255, 255, 0.78);
-  --glass-strong: rgba(255, 255, 255, 0.9);
-  --ink: #171717;
+  --glass: rgba(255, 255, 255, 0.2);
+  --glass-strong: rgba(255, 255, 255, 0.3);
   --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.78);
 }
 
 /* Reset and page layout */
@@ -27,8 +27,9 @@ body {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  color: var(--ink);
-  background: linear-gradient(135deg, #c99e1a 0%, #fff1a8 28%, #d4af37 60%, #f7e28b 100%);
+  color: var(--white);
+  text-shadow: 0 1px 4px var(--shadow);
+  background: linear-gradient(135deg, #9d7510 0%, #d4af37 35%, #f1d979 62%, #b88912 100%);
   background-attachment: fixed;
 }
 
@@ -50,13 +51,13 @@ body > :not(.coin-bg),
   flex: 1;
 }
 
-/* Navigation stays at the top; the footer remains in normal document flow. */
+/* Sticky navigation; footer remains in normal document flow. */
 header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: linear-gradient(110deg, #a77a08, #f8df72 48%, #b88d18);
-  box-shadow: 0 3px 12px rgba(58, 45, 7, 0.25);
+  background: linear-gradient(110deg, #8e690d, #d4af37 48%, #9c7410);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
 }
 
 header nav {
@@ -70,21 +71,22 @@ header nav {
 header nav a {
   display: inline-block;
   padding: 0.55rem 1.15rem;
-  color: var(--ink);
-  background: linear-gradient(135deg, #fff4bd, #dfc04d);
-  border: 1px solid #97700e;
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 999px;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 3px #000000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 header nav a:hover,
 header nav a[aria-current="page"] {
-  color: #000000;
-  background: linear-gradient(135deg, #fff9d6, #ffffff);
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.58);
   transform: translateY(-2px);
-  box-shadow: 0 7px 16px rgba(57, 57, 57, 0.3);
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.35);
 }
 
 /* Home hero */
@@ -97,9 +99,9 @@ header nav a[aria-current="page"] {
   gap: 0.7rem;
   padding: 3rem 2rem;
   text-align: center;
-  background-color: #e7cc68;
+  background-color: #9d7510;
   background-image:
-    linear-gradient(rgba(18, 30, 25, 0.42), rgba(18, 30, 25, 0.5)),
+    linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.5)),
     url("../images/background.jpg");
   background-size: cover;
   background-position: center;
@@ -110,7 +112,7 @@ header nav a[aria-current="page"] {
   font-size: clamp(4rem, 10vw, 8rem);
   line-height: 1.05;
   color: var(--white);
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.85);
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9);
 }
 
 .hero p {
@@ -130,28 +132,30 @@ header nav a[aria-current="page"] {
   50% { border-color: transparent; }
 }
 
-/* Shared buttons */
+/* Buttons */
 .button {
   display: inline-block;
   margin-top: 1.25rem;
   padding: 0.75rem 1.5rem;
-  color: #111111;
-  background: linear-gradient(135deg, #fff1a8, #ffffff);
-  border: 1px solid #97700e;
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 8px;
   text-decoration: none;
   font: inherit;
   font-weight: 700;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 3px #000000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover {
+  color: var(--white);
   transform: translateY(-3px);
-  box-shadow: 0 9px 20px rgba(52, 52, 52, 0.3);
+  box-shadow: 0 9px 20px rgba(0, 0, 0, 0.38);
 }
 
-/* Keep the footer below page content, never fixed or sticky. */
+/* Footer is not fixed or sticky. */
 footer {
   position: relative;
   z-index: 2;
@@ -159,9 +163,9 @@ footer {
   margin-top: auto;
   padding: 1rem;
   text-align: center;
-  color: #111111;
-  background: linear-gradient(110deg, #b88d18, #f1d96e 50%, #b88d18);
-  border-top: 1px solid rgba(95, 73, 9, 0.35);
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.38);
+  border-top: 1px solid rgba(255, 255, 255, 0.55);
 }
 
 /* About page */
@@ -176,8 +180,8 @@ footer {
 .projects > h1 {
   margin-bottom: 2rem;
   text-align: center;
-  color: #111111;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+  color: var(--white);
+  text-shadow: 0 2px 6px var(--shadow);
 }
 
 .about h2,
@@ -185,7 +189,8 @@ footer {
 .project-card h2 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #111111;
+  color: var(--white);
+  text-shadow: 0 2px 5px var(--shadow);
 }
 
 .about ul,
@@ -204,10 +209,10 @@ footer {
   width: min(300px, 75vw);
   height: min(300px, 75vw);
   object-fit: cover;
-  border: 6px solid #d4af37;
+  border: 6px solid var(--gold);
   border-radius: 50%;
   margin: 0 auto 2rem;
-  box-shadow: 0 8px 24px rgba(28, 42, 34, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .table-wrapper {
@@ -219,8 +224,9 @@ table {
   border-collapse: collapse;
   overflow: hidden;
   border-radius: 8px;
-  color: #111111;
+  color: var(--white);
   background: var(--glass);
+  text-shadow: 0 1px 4px var(--shadow);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -229,16 +235,16 @@ th,
 td {
   padding: 0.75rem 1rem;
   text-align: left;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 th {
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.78);
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 tbody tr:hover {
-  background: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 /* Projects */
@@ -257,11 +263,12 @@ tbody tr:hover {
 .demo-card,
 .demo-block,
 .message-box {
-  color: #111111;
+  color: var(--white);
   background: var(--glass);
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.68);
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(31, 35, 29, 0.18);
+  text-shadow: 0 1px 4px var(--shadow);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -275,7 +282,7 @@ tbody tr:hover {
 .project-card:hover,
 .demo-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(31, 35, 29, 0.28);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.34);
 }
 
 .project-card img {
@@ -318,14 +325,14 @@ tbody tr:hover {
   height: 14px;
   overflow: hidden;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .skill-fill {
   width: 0;
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #d4af37, #8b6711);
+  background: linear-gradient(90deg, #fff1a8, #9c7410);
   transition: width 1.2s ease;
 }
 
@@ -404,18 +411,23 @@ tbody tr:hover {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  color: #111111;
+  color: var(--white);
 }
 
 #whatsapp-form input,
 #whatsapp-form textarea {
   width: 100%;
   padding: 0.6rem;
-  color: #111111;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 0, 0, 0.28);
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 6px;
   font: inherit;
+}
+
+#whatsapp-form input::placeholder,
+#whatsapp-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 #whatsapp-form textarea {
@@ -440,11 +452,17 @@ tbody tr:hover {
   margin-bottom: 0.75rem;
 }
 
+.contact-list a,
+.projects a:not(.button) {
+  color: var(--white);
+  text-shadow: 0 1px 4px var(--shadow);
+}
+
 .contact-icon {
   width: 22px;
   height: 22px;
   flex-shrink: 0;
-  color: #111111;
+  color: var(--white);
 }
 
 @media (max-width: 600px) {
