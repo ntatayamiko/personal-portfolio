@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yamiko Ntata | Home</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
   <header>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" aria-current="page">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
       <a href="animations.html">Animated Concepts</a>
@@ -40,67 +41,74 @@
       <a class="button" href="projects.html">View My Projects</a>
     </section>
 
+    <section class="home-gallery" aria-labelledby="gallery-title">
+      <div class="gallery-heading">
+        <p class="eyebrow">Selected design work</p>
+        <h2 id="gallery-title">CorelDRAW Projects</h2>
+        <p>A selection of logo, poster, page, and vector designs.</p>
+      </div>
+      <div class="gallery-frame" id="corel-gallery" aria-roledescription="carousel" aria-label="CorelDRAW project gallery">
+        <figure class="gallery-slide is-active" aria-hidden="false">
+          <img src="images/coreldrawproject/nyasacoin-logo.webp" alt="NyasaCoin logo design created in CorelDRAW" loading="lazy">
+          <figcaption>NyasaCoin Logo</figcaption>
+        </figure>
+        <figure class="gallery-slide" aria-hidden="true">
+          <img src="images/coreldrawproject/nyasacoin-poster.webp" alt="NyasaCoin promotional poster designed in CorelDRAW" loading="lazy">
+          <figcaption>NyasaCoin Poster</figcaption>
+        </figure>
+        <figure class="gallery-slide" aria-hidden="true">
+          <img src="images/coreldrawproject/page-design.webp" alt="Page layout design created in CorelDRAW" loading="lazy">
+          <figcaption>Page Design</figcaption>
+        </figure>
+        <figure class="gallery-slide" aria-hidden="true">
+          <img src="images/coreldrawproject/vector-artwork.webp" alt="Vector artwork created in CorelDRAW" loading="lazy">
+          <figcaption>Vector Artwork</figcaption>
+        </figure>
+        <button class="gallery-control gallery-prev" type="button" aria-label="Show previous CorelDRAW project">&#10094;</button>
+        <button class="gallery-control gallery-next" type="button" aria-label="Show next CorelDRAW project">&#10095;</button>
+      </div>
+      <div class="gallery-dots" role="group" aria-label="Choose a CorelDRAW project">
+        <button class="gallery-dot is-active" type="button" aria-label="Show NyasaCoin Logo" aria-current="true"></button>
+        <button class="gallery-dot" type="button" aria-label="Show NyasaCoin Poster"></button>
+        <button class="gallery-dot" type="button" aria-label="Show Page Design"></button>
+        <button class="gallery-dot" type="button" aria-label="Show Vector Artwork"></button>
+      </div>
+    </section>
+
     <section class="home-highlights">
       <div class="highlight-intro">
         <p class="eyebrow">Profile Highlights</p>
         <h2>Creative, technical, and development-focused.</h2>
       </div>
-
       <div class="highlight-grid">
         <article class="high-card">
-          <h3>Design & Media</h3>
-          <ul>
-            <li>CorelDRAW</li>
-            <li>Adobe Premiere Pro</li>
-            <li>Adobe After Effects</li>
-            <li>Adobe Photoshop</li>
-          </ul>
+          <h3>Design &amp; Media</h3>
+          <ul><li>CorelDRAW</li><li>Adobe Premiere Pro</li><li>Adobe After Effects</li><li>Adobe Photoshop</li></ul>
         </article>
-
         <article class="high-card">
-          <h3>Engineering & CAD</h3>
-          <ul>
-            <li>Autodesk Fusion 360</li>
-            <li>SolidWorks CAD</li>
-            <li>3D model thinking</li>
-          </ul>
+          <h3>Engineering &amp; CAD</h3>
+          <ul><li>Autodesk Fusion 360</li><li>SolidWorks CAD</li><li>3D model thinking</li></ul>
         </article>
-
         <article class="high-card">
           <h3>Development</h3>
-          <ul>
-            <li>Decentralized app (dApp) development</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Web and software development</li>
-          </ul>
+          <ul><li>Decentralized app (dApp) development</li><li>JavaScript</li><li>Python</li><li>Web and software development</li></ul>
         </article>
-
         <article class="high-card">
           <h3>Experience</h3>
           <p>Rydberg Starck Limited internships:</p>
-          <ul>
-            <li>2025 — 3 months</li>
-            <li>2026 — 3 months</li>
-          </ul>
+          <ul><li>2025 — 3 months</li><li>2026 — 3 months</li></ul>
         </article>
-
         <article class="high-card">
           <h3>Hobbies</h3>
-          <ul>
-            <li>Swimming</li>
-            <li>Creative design</li>
-            <li>Technology exploration</li>
-          </ul>
+          <ul><li>Swimming</li><li>Creative design</li><li>Technology exploration</li></ul>
         </article>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 NyasaCoin ltd</p>
-  </footer>
+  <footer><p>&copy; 2026 NyasaCoin ltd</p></footer>
 
   <script src="js/script.js"></script>
+  <script src="js/gallery.js"></script>
 </body>
 </html>
