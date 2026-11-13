@@ -12,6 +12,11 @@ body {
   background-color: #1a1a2e;
 }
 
+.content {
+  position: relative;
+  z-index: 1;
+}
+
 header nav {
   display: flex;
   justify-content: center;
