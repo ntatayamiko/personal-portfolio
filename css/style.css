@@ -1,0 +1,537 @@
+/* Reset default browser spacing so layouts behave predictably */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #f5f5f5;
+  background-color: #1a1a2e;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: #16213e;
+}
+
+header nav a {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: #e94560;
+}
+
+/* Hero section: photo as background with a dark overlay for readability */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-image:
+    linear-gradient(rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.9)),
+    url("../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #e94560;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #16213e;
+}
+
+#typed-text {
+  border-right: 3px solid #e94560;
+  padding-right: 4px;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* About page layout */
+.about {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.about h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about h2 {
+  color: #e94560;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about ul,
+.about ol {
+  margin-left: 1.5rem;
+}
+
+.about li {
+  margin-bottom: 0.5rem;
+}
+
+/* Profile photo: circular crop with a border */
+.profile-photo {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #e94560;
+  margin: 0 auto 2rem;
+}
+
+/* Education table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #16213e;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #0f3460;
+}
+
+th {
+  background-color: #0f3460;
+  color: #e94560;
+}
+
+tbody tr:hover {
+  background-color: #1f2b4d;
+}
+
+/* On small screens, let the table scroll sideways instead of squashing */
+@media (max-width: 600px) {
+  .table-wrapper {
+    overflow-x: auto;
+  }
+}
+
+/* Animated Concepts page */
+.animations-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.animations-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.demo-block {
+  background-color: #16213e;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.demo-block h2 {
+  color: #e94560;
+  margin-bottom: 1rem;
+}
+
+/* Scroll reveal: hidden until JavaScript adds "visible" */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effects */
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.demo-card {
+  flex: 1 1 200px;
+  padding: 1.5rem;
+  background-color: #0f3460;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.demo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
+}
+
+.demo-card:nth-child(3):hover {
+  background-color: #e94560;
+}
+
+/* Skill bars */
+.skill {
+  margin-bottom: 1rem;
+}
+
+.skill-track {
+  background-color: #1a1a2e;
+  border-radius: 999px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0;
+  background-color: #e94560;
+  border-radius: 999px;
+  transition: width 1.2s ease;
+}
+
+/* Respect users who turn off motion in their device settings */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .skill-fill,
+  .demo-card {
+    transition: none;
+  }
+}
+
+/* Projects page */
+.projects {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.projects > h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.projects > p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Project cards: lift and glow on hover */
+.project-card {
+  background-color: #16213e;
+  border: 1px solid #0f3460;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(233, 69, 96, 0.3);
+}
+
+.project-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.project-card h2 {
+  color: #e94560;
+  margin-bottom: 0.75rem;
+}
+
+.project-card ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Keep the navigation bar visible at the top while scrolling */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #16213e;
+}
+
+/* Navigation links styled as buttons */
+header nav a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  color: #f5f5f5;
+  background-color: #0f3460;
+  border: 1px solid #e94560;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+header nav a:hover {
+  background-color: #e94560;
+  transform: translateY(-2px);
+}
+
+/* Highlight the link for the page the visitor is on */
+header nav a[aria-current="page"] {
+  background-color: #e94560;
+}
+
+/* Floating nav buttons: a gentle bob, lifting and glowing on hover */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+header nav a {
+  animation: float 3s ease-in-out infinite;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+header nav a:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(233, 69, 96, 0.45);
+  animation-play-state: paused;
+}
+
+/* Respect visitors who turn off motion */
+@media (prefers-reduced-motion: reduce) {
+  header nav a {
+    animation: none;
+  }
+}
+
+/* Shared floating motion for buttons and containers */
+@keyframes float-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Buttons across all pages */
+.button {
+  animation: float-soft 3s ease-in-out infinite;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(233, 69, 96, 0.45);
+  animation-play-state: paused;
+}
+
+/* Containers: a slower bob, with the shadow lifting on hover */
+.project-card,
+.demo-card,
+.demo-block {
+  animation: float-soft 6s ease-in-out infinite;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover,
+.demo-card:hover,
+.demo-block:hover {
+  animation-play-state: paused;
+  box-shadow: 0 12px 28px rgba(233, 69, 96, 0.35);
+}
+
+/* Respect visitors who turn off motion */
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .project-card,
+  .demo-card,
+  .demo-block {
+    animation: none;
+  }
+}
+
+/* Crypto coin background: tilted rows of coins scrolling in opposite directions */
+.coin-bg {
+  position: absolute;
+  inset: -20%;
+  overflow: hidden;
+  opacity: 0.12;
+  transform: rotate(-12deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep the page content above the coins */
+.content > main,
+.content > footer {
+  position: relative;
+  z-index: 1;
+}
+
+.coin-line {
+  display: flex;
+  width: max-content;
+  margin: 2rem 0;
+  animation: coin-scroll 30s linear infinite;
+}
+
+.coin-line span {
+  padding-right: 2.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f7b731;
+  white-space: nowrap;
+}
+
+.coin-line.line-2 {
+  animation-direction: reverse;
+  animation-duration: 45s;
+}
+
+.coin-line.line-3 {
+  animation-duration: 20s;
+}
+
+@keyframes coin-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Respect visitors who turn off motion */
+@media (prefers-reduced-motion: reduce) {
+  .coin-line {
+    animation: none;
+  }
+}
+
+/* Contact message box on the About page */
+.message-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #16213e;
+  border: 1px solid #0f3460;
+  border-radius: 10px;
+}
+
+.message-box h2 {
+  color: #e94560;
+  margin-bottom: 0.75rem;
+}
+
+.message-box p {
+  margin-bottom: 1rem;
+}
+
+/* Contact form: stack the fields vertically */
+#whatsapp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+#whatsapp-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: #f5f5f5;
+}
+
+#whatsapp-form input,
+#whatsapp-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #0f3460;
+  background-color: #1a1a2e;
+  color: #f5f5f5;
+  font: inherit;
+}
+
+#whatsapp-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+#whatsapp-form .button {
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Contact list with icons */
+.contact-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #e94560;
+}
+
+.contact-list a:hover .contact-icon,
+.contact-list li:hover .contact-icon {
+  transform: scale(1.15);
+  transition: transform 0.2s ease;
+}
